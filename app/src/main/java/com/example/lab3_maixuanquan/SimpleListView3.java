@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.lab3_maixuanquan.adapter.FruitAdapter;
 import com.example.lab3_maixuanquan.object.Fruit;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -90,6 +91,14 @@ public class SimpleListView3 extends AppCompatActivity {
                     fruits.set(selectedPosition, new Fruit(txtFruitName.getText().toString(), txtDescription.getText().toString(), imageUri));
                     fruitAdapter.notifyDataSetChanged();
                 }
+            }
+        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(SimpleListView3.this, SimpleListView4.class);
+                startActivity(myIntent);
             }
         });
     }

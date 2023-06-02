@@ -2,6 +2,7 @@ package com.example.lab3_maixuanquan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -82,6 +85,14 @@ public class SimpleListView2 extends AppCompatActivity {
                     arrayAdapter.notifyDataSetChanged();
                     etItemName.setText("");
                 }
+            }
+        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(SimpleListView2.this, SimpleListView3.class);
+                startActivity(myIntent);
             }
         });
     }
